@@ -1,35 +1,39 @@
 ﻿using System;
 
-bool comp1 = 5 > 3;
-bool comp2 = 5 >= 5;
-Console.WriteLine($"{comp1}, {comp2}");
+int x = 17 / 5;
+int y = 17 % 5;
+Console.WriteLine($"{x}, {y}");
 
-bool strEqual = "hello" == "hello";
-Console.WriteLine(strEqual);
+int a1 = 5;
+int res1 = ++a1 * 2;
+Console.WriteLine($"{res1} ({a1})");
 
-bool nanEqual = double.IsNaN == double.IsNaN;
-Console.WriteLine(nanEqual);
+int a2 = 5;
+int res2 = a2++ * 2;
+Console.WriteLine($"{res2} ({a2})");
 
-object objA = new int[] { 1 };
-object objB = new int[] { 1 };
-bool objEqual = objA == objB;
-Console.WriteLine(objEqual);
+int divInt = 7 / 2;
+double divDouble = 7.0 / 2;
+Console.WriteLine($"{divInt}, {divDouble}");
 
-bool doubleEqual = 10 != 10.0;
-Console.WriteLine(doubleEqual);
+int remNegative = -15 % 4;
+Console.WriteLine(remNegative);
 
-bool nullComp = null == null;
-Console.WriteLine(nullComp);
+int x2 = 10;
+x2 = x2++ + ++x2;
+Console.WriteLine(x2);
 
-bool exprComp = (3 < 5) == (10 >= 20);
-Console.WriteLine(exprComp);
+try { int max = int.MaxValue; int res = checked(max + 1); }
+catch (OverflowException ex) { Console.WriteLine(ex.GetType().Name); }
 
-bool resAnd = 4 <= 4 && 5 > 2;
-Console.WriteLine(resAnd);
+int maxUnchecked = int.MaxValue;
+int resUnchecked = unchecked(maxUnchecked + 1);
+Console.WriteLine(resUnchecked);
 
-char Char = 'b';
-bool charComp = Char > 'a';
-Console.WriteLine(charComp);
+double inf = 1.0 / 0.0;
+double nan = 0.0 / 0.0;
+Console.WriteLine($"{inf}, {nan}");
 
-bool zeroComp = -0.0 == 0.0;
-Console.WriteLine(zeroComp);
+int a = 8, b = 3;
+int c = a - b * 2 + a / b;
+Console.WriteLine(c);
